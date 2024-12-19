@@ -173,11 +173,12 @@ function get_pokemon_sprite(pokemon_id) {
 }
 
 function get_pokemon_infos(pokemon_id) {
-	const pokemon = pokemons[pokemon_id];
+	const pokemon = all_pokemons[pokemon_id];
+
     return {
         name: pokemon.name,
         id: pokemon.id,
-        types: pokemon.type,
+        types: pokemon.types,
         stats: Object.entries(pokemon.stats).map(([name, value]) => ({
             name,
             value
