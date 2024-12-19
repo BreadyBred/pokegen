@@ -16927,9 +16927,15 @@ const pokemons = {
     }
 };
 
-const all_types = ['water', 'fire', 'grass', 'poison', 'steel', 'ground', 'rock', 'fairy', 'electric', 'bug', 'dark', 'flying', 'fighting', 'ghost', 'dragon', 'normal', 'ice', 'psychic'];
+// const all_types = ["water", "fire", "grass", "poison", "steel", "ground", "rock", "fairy", "electric", "bug", "dark", "flying", "fighting", "ghost", "dragon", "normal", "ice", "psychic"];
 
-const all_gens = {1: ['0','151'], 2: ['152','251'], 3: ['252','386'], 4: ['387','493'], 5: ['494','649'], 6: ['650','721'], 7: ['722','807'], 8: ['808','898'], 9: ['899','1025']}
+const all_gens = {1: ["0","151"], 2: ["152","251"], 3: ["252","386"], 4: ["387","493"], 5: ["494","649"], 6: ["650","721"], 7: ["722","807"], 8: ["808","898"], 9: ["899","1025"]};
+
+const specific_pokemons = [];
+get_specific_pokemons();
+
+const all_types = [];
+get_all_types();
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.reroll-button').addEventListener('mouseenter', () => {
@@ -16957,29 +16963,33 @@ function get_medias_folder() {
 
 function get_specific_pokemons() {
     return new Promise((resolve, reject) => {
-        fetch(`${get_medias_folder()}/json/specific_pokemons.json`)
+        fetch(`${get_medias_folder()}/files/specific_pokemons.json`)
             .then(response => response.json())
-            .then(data => {
-                specific_pokemons = [...data.names];  // Remplir le tableau avec les noms spécifiques
-                resolve(specific_pokemons);  // Résoudre la promesse avec le tableau des Pokémon
-            })
-            .catch(error => {
-                console.error('Error loading JSON:', error);
-                reject(error);  // Rejeter la promesse en cas d'erreur
-            });
+                .then(data => {
+                    specific_pokemons = [...data.names];
+                    resolve(specific_pokemons);
+                })
+                .catch(error => {
+                    console.error('Error loading JSON:', error);
+                    reject(error);
+                });
     });
 }
 
-let specific_pokemons = [];
-get_specific_pokemons()
-    .then(pokemons => {
-        console.log(pokemons);  // Accéder à specific_pokemons ici
-        // Exemple d'accès direct à specific_pokemons
-        console.log(specific_pokemons);
-    })
-    .catch(error => {
-        console.error('Failed to load Pokémon data:', error);
+function get_all_types() {
+    return new Promise((resolve, reject) => {
+        fetch(`${get_medias_folder()}/files/all_types.json`)
+            .then(response => response.json())
+                .then(data => {
+                    all_types = [...data.types];
+                    resolve(all_types);
+                })
+                .catch(error => {
+                    console.error('Error loading JSON:', error);
+                    reject(error);
+                });
     });
+}
 
 function enable_single_reroll() {
 	document.querySelectorAll('.pokemon-case').forEach(element => {
