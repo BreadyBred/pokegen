@@ -1,15 +1,3 @@
-var specific_pokemons = [];
-get_specific_pokemons();
-
-var all_types = [];
-get_all_types();
-
-var all_gens = [];
-get_all_gens();
-
-var all_pokemons = [];
-get_all_pokemons();
-
 function get_site_root(secured = true) {
     if (window.location.hostname === 'localhost')
         return 'http://localhost/travail/projets/pokeshuffle';
@@ -22,6 +10,14 @@ function get_site_root(secured = true) {
 
 function get_medias_folder() {
     return `${get_site_root()}/medias`;
+}
+
+function get_pokemon_sprite(pokemon_id) {
+	return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon_id}.png`;
+}
+
+function get_gen() {
+	return document.getElementById('gen_getter').getAttribute('data-id');
 }
 
 function get_all_pokemons() {
