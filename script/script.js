@@ -16941,6 +16941,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+function get_site_root(secured = true) {
+    if (window.location.hostname === 'localhost')
+        return 'http://localhost/travail/projets/pokeshuffle';
+
+    if (!secured)
+        return 'http://pokeshuffle.freesite.online';
+
+    return 'https://pokeshuffle.freesite.online';
+}
+
+function get_medias_folder() {
+    return `${get_site_root()}/medias`;
+}
+
+function get_specific_pokemons() {
+    return new Promise((resolve, reject) => {
+        fetch(`${get_medias_folder()}/json/specific_pokemons.json`)
+            .then(response => response.json())
+            .then(data => {
+                specific_pokemons = [...data.names];  // Remplir le tableau avec les noms spécifiques
+                resolve(specific_pokemons);  // Résoudre la promesse avec le tableau des Pokémon
+            })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+                reject(error);  // Rejeter la promesse en cas d'erreur
+            });
+    });
+}
+
+let specific_pokemons = [];
+get_specific_pokemons()
+    .then(pokemons => {
+        console.log(pokemons);  // Accéder à specific_pokemons ici
+        // Exemple d'accès direct à specific_pokemons
+        console.log(specific_pokemons);
+    })
+    .catch(error => {
+        console.error('Failed to load Pokémon data:', error);
+    });
+
 function enable_single_reroll() {
 	document.querySelectorAll('.pokemon-case').forEach(element => {
 		element.addEventListener('click', reroll_single_pokemon);
@@ -16978,79 +17018,14 @@ function reroll_single_pokemon(event) {
 
 function display_pokemon_details(pokemon_id, case_id) {
 	function format_pokemon_name(name) {
-		switch (name) {
-			case 'mr-mime':
-				return 'Mr Mime';
-			case 'mime-jr':
-				return 'Mime Jr';
-			case 'jangmo-o':
-				return 'Jangmo O';
-			case 'hakamo-o':
-				return 'Hakamo O';
-			case 'kommo-o':
-				return 'Kommo O';
-			case 'tapu-koko':
-				return 'Tapu Koko';
-			case 'tapu-lele':
-				return 'Tapu Lele';
-			case 'tapu-lulu':
-				return 'Tapu Lulu';
-			case 'tapu-fini':
-				return 'Tapu Fini';
-			case 'great-tusk':
-				return 'Great Tusk';
-			case 'scream-tail':
-				return 'Scream Tail';
-			case 'brute-bonnet':
-				return 'Brute Bonnet';
-			case 'flutter-mane':
-				return 'Flutter Mane';
-			case 'slither-wing':
-				return 'Slither Wing';
-			case 'sandy-shocks':
-				return 'Sandy Shocks';
-			case 'iron-treads':
-				return 'Iron Treads';
-			case 'iron-bundle':
-				return 'Iron Bundle';
-			case 'iron-hands':
-				return 'Iron Hands';
-			case 'iron-jugulis':
-				return 'Iron Jugulis';
-			case 'iron-moth':
-				return 'Iron Moth';
-			case 'iron-thorns':
-				return 'Iron Thorns';
-			case 'wo-chien':
-				return 'Wo Chien';
-			case 'chien-pao':
-				return 'Chien Pao';
-			case 'ting-lu':
-				return 'Ting Lu';
-			case 'chi-yu':
-				return 'Chi Yu';
-			case 'roaring-moon':
-				return 'Roaring Moon';
-			case 'iron-valiant':
-				return 'Iron Valiant';
-			case 'walking-wake':
-				return 'Walking Wake';
-			case 'iron-leaves':
-				return 'Iron Leaves';
-			case 'gouging-fire':
-				return 'Gouging Fire';
-			case 'raging-bolt':
-				return 'Raging Bolt';
-			case 'iron-boulder':
-				return 'Iron Boulder';
-			case 'iron-crown':
-				return 'Iron Crown';
-			default:
-				const index = name.indexOf('-');
-				if (index !== -1)
-					return name.substring(0, index);
-				return name;
-		}
+        if(specific_pokemons.includes(name)) {
+            return name.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+        } else {
+            const index = name.indexOf('-');
+            if (index !== -1)
+                return name.substring(0, index);
+            return name;
+        }
 	}
 
 	function capitalize_first_letter(str) {
@@ -17105,11 +17080,10 @@ function display_pokemon_details(pokemon_id, case_id) {
 
 	setTimeout(() => {
 		const pokemon_infos = get_pokemon_infos(pokemon_id);
-		
+		pokemon_infos.name = pokemon_infos.name.toLowerCase();
 		const stat_check = stat_checker(pokemon_infos.stats);
 		const highest = stat_check['highest'];
 		const lowest = stat_check['lowest'];
-	
 		const pokemon_details = `
 			<span class='header'>
 				<span class='pokedex-info'>
