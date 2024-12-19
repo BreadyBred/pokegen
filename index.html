@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='shortcut icon' href='medias/images/content/favicon.ico' type='image/x-icon'>
+	<link rel='stylesheet' href='style/style.css'>
+	<script src='script/script.js'></script>
+	<title>PokéTeam Shuffle</title>
+</head>
+<body>
+	<img class='title' src='medias/images/content/title.png'>
+	<span class='pokemon-cases'>
+		<span class='rows top-row'>
+			<span id='case-0' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='0' class='pokemon-sprites'>
+			</span>
+			<span id='case-1' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='1' class='pokemon-sprites'>
+			</span>
+			<span id='case-2' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='2' class='pokemon-sprites'>
+			</span>
+		</span>
+		<span class='rows bottom-row'>
+			<span id='case-3' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='3' class='pokemon-sprites'>
+			</span>
+			<span id='case-4' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='4' class='pokemon-sprites'>
+			</span>
+			<span id='case-5' class='pokemon-case'>
+				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='5' class='pokemon-sprites'>
+			</span>
+		</span>
+	</span>
+	
+	<span class='buttons'>
+		<img src='medias/images/content/button_background.png' onclick='reroll_pokemon_choice()' class='reroll-button'>
+		<select id='gen_setter' onchange='change_gen()'>
+			<option value='0'>--All Gens--</option>
+			<option value='1'>1st Gen</option>
+			<option value='2'>2nd Gen</option>
+			<option value='3'>3rd Gen</option>
+			<option value='4'>4th Gen</option>
+			<option value='5'>5th Gen</option>
+			<option value='6'>6th Gen</option>
+			<option value='7'>7th Gen</option>
+			<option value='8'>8th Gen</option>
+			<option value='9'>9th Gen</option>
+		</select>
+	</span>
+
+	<span class='pokemon-details'>
+		<span id='detail-0' class='pokemon-detail unused'></span>
+		<span id='detail-1' class='pokemon-detail unused'></span>
+		<span id='detail-2' class='pokemon-detail unused'></span>
+		<span id='detail-3' class='pokemon-detail unused'></span>
+		<span id='detail-4' class='pokemon-detail unused'></span>
+		<span id='detail-5' class='pokemon-detail unused'></span>
+	</span>
+
+	<input type='hidden' id='gen_getter' data-id='0'>
+</body>
+</html>

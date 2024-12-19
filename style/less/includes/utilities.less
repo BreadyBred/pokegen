@@ -1,0 +1,83 @@
+// out: false
+
+@font-face {
+	font-family: 'Fractul SemiBold';
+	src: url('../medias/fonts/fractul_semibold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Fractul Regular';
+	src: url('../medias/fonts/fractul_regular.ttf') format('truetype');
+}
+
+@grey-c: #d0d0d0;
+@white-c: #F0FFF0;
+@success-c: #4ADE80;
+@error-c: #F87171;
+
+@title-ff: 'Fractul SemiBold', 'Arial', sans-serif;
+@primary-ff: 'Fractul Regular', 'Arial', sans-serif;
+
+@desktop: 768px;
+
+@media (min-width: @desktop) {
+	@title-fs: 22px;
+	@subtitle-fs: 18px;
+	@paragraph-fs: 16px;
+	@small-fs: 12px;
+	
+	@big-img: 200px;
+	@l-icon: 125px;
+	@md-icon: 50px;
+	@s-icon: 35px;
+	@xs-icon: 15px;
+	
+	@margin-gap: 150px;
+	@xl-gap: 75px;
+	@l-gap: 35px;
+	@md-gap: 25px;
+	@smd-gap: 17.5px;
+	@s-gap: 10px;
+	@xs-gap: 5px;
+
+	@l-radius: 20px;
+	@md-radius: 10px;
+	@s-radius: 5px;
+
+	@big-border: 5px;
+
+	.desktop-changes() !important;
+
+	@import (multiple) 'imports';
+}
+
+@media (max-width: @desktop) {
+	@title-fs: 18px;
+	@subtitle-fs: 18px;
+	@paragraph-fs: 14px;
+	@small-fs: 10px;
+	
+	@big-img: 200px;
+	@l-icon: 95px;
+	@md-icon: 35px;
+	@s-icon: 35px;
+	@xs-icon: 15px;
+	
+	@margin-gap: 15px;
+	@xl-gap: 25px;
+	@l-gap: 15px;
+	@md-gap: 10px;
+	@smd-gap: 7.5px;
+	@s-gap: 5px;
+	@xs-gap: 2.5px;
+
+	@l-radius: 10px;
+	@md-radius: 5px;
+	@s-radius: 2.5px;
+
+	@big-border: 2.5px;
+
+	.mobile-changes() !important;
+
+	@import (multiple) 'imports';
+}

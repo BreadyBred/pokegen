@@ -1,0 +1,169 @@
+// out: false
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html {
+	font-family: @primary-ff;
+	font-size: @paragraph-fs;
+	background: linear-gradient(180deg, rgba(240,250,255,1) 0%, rgba(212,241,249,1) 100%);
+    background-size: cover;
+	min-height: 100vh;
+}
+
+body {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	gap: @s-gap;
+	padding: @smd-gap 0;
+
+	.title {
+		height: @md-icon;
+	}
+
+	.pokemon-cases {
+		.rows {
+			display: flex;
+		}
+
+		.pokemon-case {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: @md-icon;
+			aspect-ratio: 1/1;
+			background-color: #fdfdfd;
+			border: solid 1px #0A285F;
+
+			.pokemon-sprites {
+				width: 100%;
+				aspect-ratio: 1/1;
+			}
+		}
+	}
+
+
+	.buttons {
+		width: 80%;
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		& > .reroll-button {
+			width: 75px;
+			align-self: center;
+			cursor: pointer;
+		}
+
+		& > select {
+			position: absolute;
+			align-self: flex-end;
+			right: 0;
+			appearance: none;
+			background-color: #fdfdfd;
+			border: solid 1px #0A285F;
+			padding: @xs-gap @s-gap;
+			font-family: @title-ff;
+			text-align: center;
+			max-height: 100%;
+		}
+	}
+
+	.pokemon-details {
+		display: flex;
+		justify-content: space-around;
+		gap: @xs-gap;
+
+		.pokemon-detail {
+			opacity: 0;
+			display: flex;
+			gap: @xs-gap;
+			padding: @s-gap;
+			transition: all 0.3s ease-in-out;
+			width: @big-img;
+
+			&:hover {
+				transform: scale(1.05);
+				box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+			}
+
+			.header {
+				display: flex;
+				flex-direction: column;
+				gap: @xs-gap;
+
+				.pokedex-info {
+					text-align: center;
+
+					h2 {
+						font-family: @title-ff;
+					}
+				}
+
+				.pokemon-sprites {
+					align-self: center;
+				}
+			}
+
+			.infos {
+				display: flex;
+				flex-direction: column;
+				gap: @xs-gap;
+
+				.type {
+					display: flex;
+					justify-content: space-around;
+					gap: @xs-gap;
+				}
+
+				table {
+					tr {
+						td {
+							font-size: @small-fs;
+
+							&:first-child {
+								width: 33%;
+							}
+
+							&:last-child {
+								width: 67%;
+							}
+
+							.progress-container {
+								width: 100%;
+								display: block;
+								background-color: @grey-c;
+								border-radius: 5px;
+								overflow: hidden;
+								height: 10px;
+							}
+							
+							.progress-bar {
+								display: block;
+								height: 100%;
+								width: 0%;
+								text-align: center;
+								line-height: 30px;
+								transition: width 0.5s;
+							}
+						}
+					}
+				}
+			}
+
+			img {
+				&.pokemon-sprites {
+					width: @l-icon;
+					aspect-ratio: 1/1;
+				}
+			}
+		}
+	}
+}
