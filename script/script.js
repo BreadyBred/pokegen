@@ -16929,13 +16929,16 @@ const pokemons = {
 
 // const all_types = ["water", "fire", "grass", "poison", "steel", "ground", "rock", "fairy", "electric", "bug", "dark", "flying", "fighting", "ghost", "dragon", "normal", "ice", "psychic"];
 
-const all_gens = {1: ["0","151"], 2: ["152","251"], 3: ["252","386"], 4: ["387","493"], 5: ["494","649"], 6: ["650","721"], 7: ["722","807"], 8: ["808","898"], 9: ["899","1025"]};
+// const all_gens = {1: ["0","151"], 2: ["152","251"], 3: ["252","386"], 4: ["387","493"], 5: ["494","649"], 6: ["650","721"], 7: ["722","807"], 8: ["808","898"], 9: ["899","1025"]};
 
-const specific_pokemons = [];
+var specific_pokemons = [];
 get_specific_pokemons();
 
-const all_types = [];
+var all_types = [];
 get_all_types();
+
+var all_gens = [];
+get_all_gens();
 
 document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.reroll-button').addEventListener('mouseenter', () => {
@@ -16983,6 +16986,21 @@ function get_all_types() {
                 .then(data => {
                     all_types = [...data.types];
                     resolve(all_types);
+                })
+                .catch(error => {
+                    console.error('Error loading JSON:', error);
+                    reject(error);
+                });
+    });
+}
+
+function get_all_gens() {
+    return new Promise((resolve, reject) => {
+        fetch(`${get_medias_folder()}/files/all_gens.json`)
+            .then(response => response.json())
+                .then(data => {
+                    all_gens = Object.values(data.gens);
+                    resolve(all_gens);
                 })
                 .catch(error => {
                     console.error('Error loading JSON:', error);
@@ -17201,7 +17219,7 @@ function get_random_id(gen) {
 	if(gen < 1 || gen > 9)
 		return Math.floor(Math.random() * 1025) + 1;
 
-	min = parseInt(all_gens[gen][0]);
-	max = parseInt(all_gens[gen][1]);
+	min = parseInt(all_gens[gen-1][0]);
+	max = parseInt(all_gens[gen-1][1]);
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
