@@ -79,11 +79,13 @@ body {
 	.pokemon-details {
 		display: flex;
 		justify-content: space-around;
+		flex-wrap: wrap;
 		gap: @xs-gap;
 
 		.pokemon-detail {
 			opacity: 0;
 			display: flex;
+			flex-direction: column;
 			gap: @xs-gap;
 			padding: @s-gap;
 			transition: all 0.3s ease-in-out;
@@ -92,6 +94,12 @@ body {
 			&:hover {
 				transform: scale(1.05);
 				box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+			}
+
+			img {
+				&.type-sprites {
+					height: 15px;
+				}
 			}
 
 			.header {
