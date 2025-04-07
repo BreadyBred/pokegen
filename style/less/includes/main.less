@@ -11,7 +11,7 @@
 html {
 	font-family: @primary-ff;
 	font-size: @paragraph-fs;
-	background: linear-gradient(180deg, rgba(240,250,255,1) 0%, rgba(212,241,249,1) 100%);
+	background: #111622;
     background-size: cover;
 	min-height: 100vh;
 }
@@ -21,10 +21,75 @@ body {
 	flex-direction: column;
 	align-items: center;
 	gap: @s-gap;
-	padding: @smd-gap 0;
 
-	.title {
-		height: @md-icon;
+	.site-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		white-space: nowrap;
+		border-bottom: 1px solid @border-c;
+		padding: @md-gap @md-gap;
+		width: 100%;
+		
+		.logo-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: @xs-gap;
+			color: @white-c;
+		  
+			.logo-image {
+				width: @xs-icon;
+				aspect-ratio: 1/1;
+			}
+		  
+			.site-title {
+				color: @white-c;
+				font-size: @subtitle-fs;
+				font-weight: bold;
+				line-height: 1.2;
+				letter-spacing: -0.015em;
+			}
+		}
+		
+		.nav-container {
+			display: flex;
+			flex: 1;
+			justify-content: flex-end;
+			
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: @l-gap;;
+
+				& > a {				
+					text-decoration: none;
+				}
+				
+				.roll-button {
+					height: @xs-icon;
+					align-self: flex-end;
+				}
+				
+				.nav-item {
+					display: flex;
+					color: @white-c;
+					font-size: @subtitle-fs;
+					font-weight: 500;
+					line-height: normal;
+				}
+			}
+		}
+	}
+
+	select {
+		align-self: flex-end;
+		appearance: none;
+		background-color: @white-c;
+		border: solid 1px @border-c;
+		padding: @xs-gap @s-gap;
+		font-family: @title-ff;
+		text-align: center;
 	}
 
 	.pokemon-cases {
@@ -46,33 +111,6 @@ body {
 				width: 100%;
 				aspect-ratio: 1/1;
 			}
-		}
-	}
-
-
-	.buttons {
-		width: 80%;
-		position: relative;
-		display: flex;
-		justify-content: center;
-
-		& > .reroll-button {
-			width: 75px;
-			align-self: center;
-			cursor: pointer;
-		}
-
-		& > select {
-			position: absolute;
-			align-self: flex-end;
-			right: 0;
-			appearance: none;
-			background-color: #fdfdfd;
-			border: solid 1px #0A285F;
-			padding: @xs-gap @s-gap;
-			font-family: @title-ff;
-			text-align: center;
-			max-height: 100%;
 		}
 	}
 

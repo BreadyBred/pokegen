@@ -98,7 +98,7 @@ ul {
 html {
   font-family: 'Fractul Regular', 'Arial', sans-serif;
   font-size: 16px;
-  background: linear-gradient(180deg, #f0faff 0%, #d4f1f9 100%);
+  background: #111622;
   background-size: cover;
   min-height: 100vh;
 }
@@ -107,10 +107,66 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 17.5px 0;
 }
-body .title {
-  height: 50px;
+body .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid #243047;
+  padding: 25px 25px;
+  width: 100%;
+}
+body .site-header .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #FFFFFF;
+}
+body .site-header .logo-container .logo-image {
+  width: 20px;
+  aspect-ratio: 1/1;
+}
+body .site-header .logo-container .site-title {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+body .site-header .nav-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+body .site-header .nav-container .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+body .site-header .nav-container .nav-links > a {
+  text-decoration: none;
+}
+body .site-header .nav-container .nav-links .roll-button {
+  height: 20px;
+  align-self: flex-end;
+}
+body .site-header .nav-container .nav-links .nav-item {
+  display: flex;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: normal;
+}
+body select {
+  align-self: flex-end;
+  appearance: none;
+  background-color: #FFFFFF;
+  border: solid 1px #243047;
+  padding: 5px 10px;
+  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
+  text-align: center;
 }
 body .pokemon-cases .rows {
   display: flex;
@@ -127,29 +183,6 @@ body .pokemon-cases .pokemon-case {
 body .pokemon-cases .pokemon-case .pokemon-sprites {
   width: 100%;
   aspect-ratio: 1/1;
-}
-body .buttons {
-  width: 80%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-body .buttons > .reroll-button {
-  width: 75px;
-  align-self: center;
-  cursor: pointer;
-}
-body .buttons > select {
-  position: absolute;
-  align-self: flex-end;
-  right: 0;
-  appearance: none;
-  background-color: #fdfdfd;
-  border: solid 1px #0A285F;
-  padding: 5px 10px;
-  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
-  text-align: center;
-  max-height: 100%;
 }
 body .pokemon-details {
   display: flex;

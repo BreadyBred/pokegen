@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	get_all_gens();
 	get_all_pokemons();
 
-	document.querySelector('.reroll-button').addEventListener('mouseenter', () => {
-		document.querySelector('.reroll-button').src = 'medias/images/content/button_hover.png';
-	});
+	// document.querySelector('.roll-button').addEventListener('mouseenter', () => {
+	// 	document.querySelector('.roll-button').src = 'medias/images/content/button_hover.png';
+	// });
 	
-	document.querySelector('.reroll-button').addEventListener('mouseleave', () => {
-		document.querySelector('.reroll-button').src = 'medias/images/content/button_background.png';
-	});
+	// document.querySelector('.roll-button').addEventListener('mouseleave', () => {
+	// 	document.querySelector('.roll-button').src = 'medias/images/content/button_background.png';
+	// });
 });

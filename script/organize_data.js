@@ -1,14 +1,15 @@
-function enable_single_reroll() {
+function enable_single_roll() {
 	document.querySelectorAll('.pokemon-case').forEach(function(element) {
-		element.addEventListener('click', reroll_single_pokemon);
+		element.addEventListener('click', roll_single_pokemon);
 	});
 }
 
-function reroll_pokemon_choice() {
+function roll_pokemon_choice() {
 	let i = 0;
 	const pokemon_ids = get_random_team_ids();
-	const reroll_button = document.querySelector('.reroll-button');
-	reroll_button.disabled = true;
+	const roll_button = document.querySelector('.roll-button');
+	console.log(roll_button);
+	roll_button.disabled = true;
 
 	document.querySelectorAll('.pokemon-case').forEach(function(pokemon_case) {
 		pokemon_case.innerHTML = `
@@ -20,12 +21,12 @@ function reroll_pokemon_choice() {
 	});
 
 	setTimeout(function() {
-		reroll_button.disabled = false;
-		enable_single_reroll();
+		roll_button.disabled = false;
+		enable_single_roll();
 	}, 500);
 }
 
-function reroll_single_pokemon(event) {
+function roll_single_pokemon(event) {
 	const pokemon_id = get_random_id(get_gen());
 	const single_case = document.querySelector(`#case-${event.target.id}`);
 
