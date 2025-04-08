@@ -1,40 +1,44 @@
-function enable_single_roll() {
-	document.querySelectorAll('.pokemon-case').forEach((element) => {
-		element.addEventListener('click', roll_single_pokemon);
-	});
-}
+// function enable_single_roll() {
+// 	document.querySelectorAll('.pokemon-case').forEach((element) => {
+// 		element.addEventListener('click', roll_single_pokemon);
+// 	});
+// }
 
 function generate_team(event) {
 	const button = event.currentTarget
 	button.disabled = true;
 	const pokemon_ids = get_random_team_ids();
-	let i = 0;
+	// let i = 0;
 
-	document.querySelectorAll('.pokemon-case').forEach((pokemon_case) => {
-		pokemon_case.innerHTML = `
-			<img src='${get_pokemon_sprite(pokemon_ids[i])}' id='${i}' class='pokemon-sprites'>
-		`;
+	// document.querySelectorAll('.pokemon-case').forEach((pokemon_case) => {
+	// 	pokemon_case.innerHTML = `
+	// 		<img src='${get_pokemon_sprite(pokemon_ids[i])}' id='${i}' class='pokemon-sprites'>
+	// 	`;
 
+	// 	display_pokemon_details(pokemon_ids[i], i);
+	// 	i++;
+	// });
+
+	for (let i = 0; i < 6; i++) {
 		display_pokemon_details(pokemon_ids[i], i);
-		i++;
-	});
+	}
 
 	setTimeout(() => {
 		button.removeAttribute("disabled");
-		enable_single_roll();
+		// enable_single_roll();
 	}, 500);
 }
 
-function roll_single_pokemon(event) {
-	const pokemon_id = get_random_id(get_gen());
-	const single_case = document.querySelector(`#case-${event.target.id}`);
+// function roll_single_pokemon(event) {
+// 	const pokemon_id = get_random_id(get_gen());
+// 	const single_case = document.querySelector(`#case-${event.target.id}`);
 
-	single_case.innerHTML = `
-		<img src='${get_pokemon_sprite(pokemon_id)}' id='${event.target.id}' class='pokemon-sprites'>
-	`;
+// 	single_case.innerHTML = `
+// 		<img src='${get_pokemon_sprite(pokemon_id)}' id='${event.target.id}' class='pokemon-sprites'>
+// 	`;
 
-	display_pokemon_details(pokemon_id, event.target.id);
-}
+// 	display_pokemon_details(pokemon_id, event.target.id);
+// }
 
 function display_pokemon_details(pokemon_id, case_id) {
 	function format_pokemon_name(name) {

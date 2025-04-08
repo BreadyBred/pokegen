@@ -100,16 +100,14 @@ html {
   font-size: 16px;
   background: #111622;
   background-size: cover;
-  min-height: 100vh;
 }
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   white-space: nowrap;
-  border-bottom: 1px solid #243047;
+  border-bottom: solid 1px #243047;
   padding: 25px 25px;
-  width: 100%;
 }
 .site-header .logo-container {
   display: flex;
@@ -126,126 +124,24 @@ html {
   color: #FFFFFF;
   font-size: 18px;
   font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-}
-.site-header .nav-container {
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-}
-.site-header .nav-container .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-}
-.site-header .nav-container .nav-links > a {
-  text-decoration: none;
-}
-.site-header .nav-container .nav-links .roll-button {
-  height: 20px;
-  align-self: flex-end;
-}
-.site-header .nav-container .nav-links .nav-item {
-  display: flex;
-  color: #FFFFFF;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: normal;
 }
 .container-wrapper {
-  padding: 1rem;
+  display: flex;
+  padding: 25px;
   container-type: inline-size;
+  gap: 25px;
 }
-.container-wrapper .team-generator-card {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  items-align: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid #344465;
-  background-color: #111722;
-  padding: 1.25rem;
-}
-@container (min-width: 480px) {
-  .container-wrapper .team-generator-card {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-.container-wrapper .team-generator-card .card-content {
+.container-wrapper .left-container {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
-.container-wrapper .team-generator-card .card-content .card-title {
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.2;
-}
-.container-wrapper .team-generator-card .card-content .card-description {
-  color: #93a5c8;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: normal;
-}
-.container-wrapper .team-generator-card .generate-button {
-  display: flex;
-  min-width: 84px;
-  max-width: 480px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  height: 2rem;
-  padding: 0 1rem;
-  background-color: #144bb8;
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: normal;
-}
-.container-wrapper .team-generator-card .generate-button .button-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-select {
-  align-self: flex-end;
-  appearance: none;
-  background-color: #FFFFFF;
-  border: solid 1px #243047;
-  padding: 5px 10px;
-  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
-  text-align: center;
-}
-.pokemon-cases .rows {
-  display: flex;
-}
-.pokemon-cases .pokemon-case {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  aspect-ratio: 1/1;
-  background-color: #fdfdfd;
-  border: solid 1px #0A285F;
-}
-.pokemon-cases .pokemon-case .pokemon-sprites {
-  width: 100%;
-  aspect-ratio: 1/1;
-}
-.pokemon-details {
+.container-wrapper .left-container .pokemon-details {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 5px;
 }
-.pokemon-details .pokemon-detail {
+.container-wrapper .left-container .pokemon-details .pokemon-detail {
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -254,47 +150,43 @@ select {
   transition: all 0.3s ease-in-out;
   width: 200px;
 }
-.pokemon-details .pokemon-detail:hover {
-  transform: scale(1.05);
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-}
-.pokemon-details .pokemon-detail img.type-sprites {
+.container-wrapper .left-container .pokemon-details .pokemon-detail img.type-sprites {
   height: 15px;
 }
-.pokemon-details .pokemon-detail .header {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .header {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.pokemon-details .pokemon-detail .header .pokedex-info {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokedex-info {
   text-align: center;
 }
-.pokemon-details .pokemon-detail .header .pokedex-info h2 {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokedex-info h2 {
   font-family: 'Fractul SemiBold', 'Arial', sans-serif;
 }
-.pokemon-details .pokemon-detail .header .pokemon-sprites {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokemon-sprites {
   align-self: center;
 }
-.pokemon-details .pokemon-detail .infos {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.pokemon-details .pokemon-detail .infos .type {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos .type {
   display: flex;
   justify-content: space-around;
   gap: 5px;
 }
-.pokemon-details .pokemon-detail .infos table tr td {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td {
   font-size: 12px;
 }
-.pokemon-details .pokemon-detail .infos table tr td:first-child {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td:first-child {
   width: 33%;
 }
-.pokemon-details .pokemon-detail .infos table tr td:last-child {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td:last-child {
   width: 67%;
 }
-.pokemon-details .pokemon-detail .infos table tr td .progress-container {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td .progress-container {
   width: 100%;
   display: block;
   background-color: #d0d0d0;
@@ -302,7 +194,7 @@ select {
   overflow: hidden;
   height: 10px;
 }
-.pokemon-details .pokemon-detail .infos table tr td .progress-bar {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td .progress-bar {
   display: block;
   height: 100%;
   width: 0%;
@@ -310,7 +202,85 @@ select {
   line-height: 30px;
   transition: width 0.5s;
 }
-.pokemon-details .pokemon-detail img.pokemon-sprites {
+.container-wrapper .left-container .pokemon-details .pokemon-detail img.pokemon-sprites {
   width: 125px;
   aspect-ratio: 1/1;
+}
+.container-wrapper .left-container .team-generator-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  items-align: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 10px;
+  border: 1px solid #344465;
+  background-color: #111722;
+  padding: 1.25rem;
+}
+@container (min-width: 480px) {
+  .container-wrapper .left-container .team-generator-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.container-wrapper .left-container .team-generator-card .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.container-wrapper .left-container .team-generator-card .card-content .card-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.container-wrapper .left-container .team-generator-card .card-content .card-description {
+  color: #93a5c8;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: normal;
+}
+.container-wrapper .left-container .team-generator-card .generate-button {
+  border: none;
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: #144bb8;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
+}
+.container-wrapper .left-container .team-generator-card .generate-button .button-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container-wrapper .filters {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  gap: 25px;
+}
+.container-wrapper .filters h2 {
+  color: #FFFFFF;
+}
+.container-wrapper .filters select {
+  align-self: flex-start;
+  appearance: none;
+  background-color: #243047;
+  border: solid 1px #243047;
+  padding: 5px 10px;
+  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
+  text-align: center;
+  color: #FFFFFF;
+  border-radius: 10px;
 }
