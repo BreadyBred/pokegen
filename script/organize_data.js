@@ -146,7 +146,7 @@ function display_pokemon_details(pokemon_id, case_id) {
 						<td class="${class_name}">${format_stat_name(stat.name)}:</td>
 						<td>
 							<span class="progress-container">
-							<span class="progress-bar ${color}" style="width:${real_stat_percent}%" id="progress-bar"></span>
+								<span class="progress-bar ${color}" style="width:${real_stat_percent}%" id="progress-bar"></span>
 							</span>
 						</td>
 						</tr>
@@ -161,8 +161,7 @@ function display_pokemon_details(pokemon_id, case_id) {
 			<span class="type">
 				${pokemon_infos.types.map((type) => `<img src="medias/images/types/${type}.png" class="type-sprites" alt="${type}">`).join("")}
 			</span>
-		</span>
-	</span>`;
+		</span>`;
 	
 		if (pokemon_detail_element.classList.contains("unused")) {
 			pokemon_detail_element.classList.remove("unused");
@@ -223,9 +222,3 @@ function get_random_id(gen) {
 	
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-	document.querySelector(".generate-button").addEventListener("click", generate_team);
-	document.querySelector("#gen-setter").addEventListener("change", change_gen);
-	// document.querySelector("#order-update").addEventListener("change", change_order);
-});

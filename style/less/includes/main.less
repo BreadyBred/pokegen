@@ -1,38 +1,38 @@
 // out: false
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
-	font-family: @primary-ff;
-	font-size: @paragraph-fs;
 	background: #111622;
 	background-size: cover;
+	font-family: @primary-ff;
+	font-size: @paragraph-fs;
 }
 
 .site-header {
-	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	white-space: nowrap;
 	border-bottom: solid 1px @border-c;
+	display: flex;
+	justify-content: space-between;
 	padding: @l-gap @l-gap;
+	white-space: nowrap;
 	
 	.logo-container {
-		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: @xs-gap;
 		color: @white-c;
+		display: flex;
+		gap: @xs-gap;
+		justify-content: center;
 
 		.logo-image {
-			width: @s-w;
 			aspect-ratio: 1/1;
+			width: @s-w;
 		}
 		
 		.site-title {
@@ -45,14 +45,14 @@ html {
 
 .container-wrapper {
 	display: flex;
-	padding: @l-gap;
 	container-type: inline-size;
 	gap: @l-gap;
+	padding: @l-gap;
 	
 	.left-container {
 		display: flex;
-		flex-direction: column;
 		flex-basis: 75%;
+		flex-direction: column;
 		gap: @l-gap;
 
 		.pokemon-details {
@@ -64,12 +64,11 @@ html {
 			}
 
 			.pokemon-detail {
+				border-bottom: solid 1px @border-c;
 				color: @white-c;
 				display: flex;
 				justify-content: space-between;
 				padding: @md-gap 0;
-				border-bottom: solid 1px @border-c;
-				height: 200px;
 				
 				.pokemon-infos {
 					display: flex;
@@ -89,8 +88,8 @@ html {
 					tbody {
 						display: flex;
 						flex-direction: column;
-						width: 100%;
 						justify-content: space-evenly;
+						width: 100%;
 
 						tr {
 							display: flex;
@@ -98,29 +97,29 @@ html {
 							gap: @xs-gap;
 							
 							td {
-								font-size: @small-fs;
 								display: flex;
+								font-size: @small-fs;
 	
 								&:last-child {
 									width: 250px;
 								}
 	
 								.progress-container {
-									width: 100%;
-									display: block;
 									background-color: @grey-c;
 									border-radius: 5px;
-									overflow: hidden;
+									display: block;
 									height: 10px;
+									overflow: hidden;
+									width: 100%;
 								}
 								
 								.progress-bar {
 									display: block;
 									height: 100%;
-									width: 0%;
-									text-align: center;
 									line-height: 30px;
+									text-align: center;
 									transition: width 0.5s;
+									width: 0%;
 								}
 							}
 						}
@@ -152,18 +151,18 @@ html {
 		}
 
 		.card {
+			background-color: #111722;
+			border: 1px solid #344465;
+			border-radius: @md-radius;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
 			gap: @md-gap;
-			border-radius: @md-radius;
-			border: 1px solid #344465;
-			background-color: #111722;
+			justify-content: space-between;
 			padding: @md-gap;
 	
 			@container (min-width: 480px) {
-				flex-direction: row;
 				align-items: center;
+				flex-direction: row;
 			}
 			
 			.card-content {
@@ -185,32 +184,31 @@ html {
 			}
 			
 			.button {
-				border: none;
-				display: flex;
-				min-width: 84px;
-				max-width: 480px;
-				cursor: pointer;
 				align-items: center;
-				justify-content: center;
-				overflow: hidden;
-				border-radius: @md-radius;
-				height: 2rem;
-				padding: 0 @md-gap;
 				background-color: #144bb8;
+				border: none;
+				border-radius: @md-radius;
 				color: white;
+				cursor: pointer;
+				display: flex;
 				font-size: @small-fs;
 				font-weight: 500;
+				height: 2rem;
+				justify-content: center;
 				line-height: normal;
+				min-width: 84px;
+				max-width: 480px;
+				overflow: hidden;
+				padding: 0 @md-gap;
 	
 				.button-text {
-					white-space: nowrap;
 					overflow: hidden;
 					text-overflow: ellipsis;
+					white-space: nowrap;
 				}
 			}
 		}
 	}
-
 
 	.options {
 		display: flex;
@@ -226,11 +224,11 @@ html {
 			appearance: none;
 			background-color: #243047;
 			border: solid 1px @border-c;
-			padding: @xs-gap @s-gap;
-			font-family: @title-ff;
-			text-align: center;
-			color: @white-c;
 			border-radius: @md-radius;
+			color: @white-c;
+			font-family: @title-ff;
+			padding: @xs-gap @s-gap;
+			text-align: center;
 		}
 
 		input[type=checkbox] {

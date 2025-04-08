@@ -31,36 +31,36 @@ ul {
   list-style: none;
 }
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
-  font-family: 'Fractul Regular', 'Arial', sans-serif;
-  font-size: 16px;
   background: #111622;
   background-size: cover;
+  font-family: 'Fractul Regular', 'Arial', sans-serif;
+  font-size: 16px;
 }
 .site-header {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
   border-bottom: solid 1px #243047;
+  display: flex;
+  justify-content: space-between;
   padding: 25px 25px;
+  white-space: nowrap;
 }
 .site-header .logo-container {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
   color: #FFFFFF;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }
 .site-header .logo-container .logo-image {
-  width: 20px;
   aspect-ratio: 1/1;
+  width: 20px;
 }
 .site-header .logo-container .site-title {
   color: #FFFFFF;
@@ -69,14 +69,14 @@ html {
 }
 .container-wrapper {
   display: flex;
-  padding: 25px;
   container-type: inline-size;
   gap: 25px;
+  padding: 25px;
 }
 .container-wrapper .left-container {
   display: flex;
-  flex-direction: column;
   flex-basis: 75%;
+  flex-direction: column;
   gap: 25px;
 }
 .container-wrapper .left-container .pokemon-details {
@@ -87,12 +87,11 @@ html {
   font-size: 24px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail {
+  border-bottom: solid 1px #243047;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
-  border-bottom: solid 1px #243047;
-  height: 200px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos {
   display: flex;
@@ -110,8 +109,8 @@ html {
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody {
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: space-evenly;
+  width: 100%;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr {
   display: flex;
@@ -119,27 +118,27 @@ html {
   gap: 5px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td {
-  font-size: 14px;
   display: flex;
+  font-size: 14px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td:last-child {
   width: 250px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td .progress-container {
-  width: 100%;
-  display: block;
   background-color: #d0d0d0;
   border-radius: 5px;
-  overflow: hidden;
+  display: block;
   height: 10px;
+  overflow: hidden;
+  width: 100%;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td .progress-bar {
   display: block;
   height: 100%;
-  width: 0%;
-  text-align: center;
   line-height: 30px;
+  text-align: center;
   transition: width 0.5s;
+  width: 0%;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail .sprites {
   display: flex;
@@ -160,19 +159,19 @@ html {
   height: 20px;
 }
 .container-wrapper .left-container .card {
+  background-color: #111722;
+  border: 1px solid #344465;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
-  border-radius: 10px;
-  border: 1px solid #344465;
-  background-color: #111722;
+  justify-content: space-between;
   padding: 20px;
 }
 @container (min-width: 480px) {
   .container-wrapper .left-container .card {
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
   }
 }
 .container-wrapper .left-container .card .card-content {
@@ -191,27 +190,27 @@ html {
   line-height: normal;
 }
 .container-wrapper .left-container .card .button {
-  border: none;
-  display: flex;
-  min-width: 84px;
-  max-width: 480px;
-  cursor: pointer;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 10px;
-  height: 2rem;
-  padding: 0 20px;
   background-color: #144bb8;
+  border: none;
+  border-radius: 10px;
   color: white;
+  cursor: pointer;
+  display: flex;
   font-size: 14px;
   font-weight: 500;
+  height: 2rem;
+  justify-content: center;
   line-height: normal;
+  min-width: 84px;
+  max-width: 480px;
+  overflow: hidden;
+  padding: 0 20px;
 }
 .container-wrapper .left-container .card .button .button-text {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .container-wrapper .options {
   display: flex;
@@ -226,11 +225,11 @@ html {
   appearance: none;
   background-color: #243047;
   border: solid 1px #243047;
-  padding: 5px 10px;
-  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
-  text-align: center;
-  color: #FFFFFF;
   border-radius: 10px;
+  color: #FFFFFF;
+  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
+  padding: 5px 10px;
+  text-align: center;
 }
 .container-wrapper .options label {
   color: #FFFFFF;
