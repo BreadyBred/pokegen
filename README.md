@@ -1,4 +1,4 @@
-# PokéTeam Shuffle
+# PokeGen
 
 This project is a random Pokémon team generator for [Pokémon Showdown](https://pokemonshowdown.com/), a popular online battle simulator. It allows users to quickly create a team of six random Pokémon, providing a fun and unpredictable way to play.
 
@@ -17,7 +17,7 @@ This project is a random Pokémon team generator for [Pokémon Showdown](https:/
 
 ## How to Use
 
-To use PokéTeam Shuffle:
+To use PokeGen:
 
 1.  **Open the Application:** Simply open the `index.html` file in your web browser. This will load the application.
 
@@ -29,7 +29,7 @@ To use PokéTeam Shuffle:
 
 ## Screenshots
 
-![poketeam_shuffle](https://github.com/user-attachments/assets/56d33365-18b1-4bee-8cc8-f317ef10e3a3)
+![pokegen](https://github.com/user-attachments/assets/56d33365-18b1-4bee-8cc8-f317ef10e3a3)
 
 ## Contributing
 

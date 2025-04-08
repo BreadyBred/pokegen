@@ -1,67 +1,106 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-	<meta charset='UTF-8'>
-	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<link rel='shortcut icon' href='medias/images/content/favicon.ico' type='image/x-icon'>
-	<link rel='stylesheet' href='style/style.css'>
-	<script src='script/script.js'></script>
-	<script src='script/utility_functions.js'></script>
-	<script src='script/organize_data.js'></script>
-	<title>PokéTeam Shuffle</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="medias/images/content/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="style/style.css">
+	<script src="script/script.js"></script>
+	<script src="script/utility_functions.js"></script>
+	<script src="script/organize_data.js"></script>
+	<title>PokeGen</title>
 </head>
 <body>
-	<img class='title' src='medias/images/content/title.png'>
-	<span class='pokemon-cases'>
-		<span class='rows top-row'>
-			<span id='case-0' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='0' class='pokemon-sprites'>
-			</span>
-			<span id='case-1' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='1' class='pokemon-sprites'>
-			</span>
-			<span id='case-2' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='2' class='pokemon-sprites'>
-			</span>
-		</span>
-		<span class='rows bottom-row'>
-			<span id='case-3' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='3' class='pokemon-sprites'>
-			</span>
-			<span id='case-4' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='4' class='pokemon-sprites'>
-			</span>
-			<span id='case-5' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='5' class='pokemon-sprites'>
-			</span>
-		</span>
-	</span>
+	<header class="site-header">
+		<div class="logo-container">
+			<img class="logo-image" src="medias/images/content/logo.png" alt="Logo"/>
+			<h2 class="site-title">PokeGen</h2>
+		</div>
+	</header>
+
+	<div class="container-wrapper">
+		<div class="left-container">
+			<section class="team-generator-card card">
+				<div class="card-content">
+					<p class="card-title">Generate Team</p>
+					<p class="card-description">Generate a team based on the current filters</p>
+				</div>
+				<button class="generate-button button">
+					<span class="button-text">Generate</span>
+				</button>
+			</section>
+
+			<section class="team-reset-card card">
+				<div class="card-content">
+					<p class="card-title">Reset Team</p>
+					<p class="card-description">Reset the placeholders</p>
+				</div>
+				<button class="reset-button button">
+					<span class="button-text">Reset</span>
+				</button>
+			</section>
 	
-	<span class='buttons'>
-		<img src='medias/images/content/button_background.png' onclick='reroll_pokemon_choice()' class='reroll-button'>
-		<select id='gen_setter' onchange='change_gen()'>
-			<option value='0'>--All Gens--</option>
-			<option value='1'>1st Gen</option>
-			<option value='2'>2nd Gen</option>
-			<option value='3'>3rd Gen</option>
-			<option value='4'>4th Gen</option>
-			<option value='5'>5th Gen</option>
-			<option value='6'>6th Gen</option>
-			<option value='7'>7th Gen</option>
-			<option value='8'>8th Gen</option>
-			<option value='9'>9th Gen</option>
-		</select>
-	</span>
+			<section class="pokemon-details">
+				<h1>Current team</h1>
+				<span id="detail-0" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+				<span id="detail-1" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+				<span id="detail-2" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+				<span id="detail-3" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+				<span id="detail-4" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+				<span id="detail-5" class="pokemon-detail unused">
+					<h2>Empty placeholder</h2>
+				</span>
+			</section>
+		</div>
+		
+		<section class="options">
+			<h2>Filters</h2>
+			<div class="filters">
+				<select id="gen-setter">
+					<option value="0">-- All Gens --</option>
+					<option value="1">1st Gen</option>
+					<option value="2">2nd Gen</option>
+					<option value="3">3rd Gen</option>
+					<option value="4">4th Gen</option>
+					<option value="5">5th Gen</option>
+					<option value="6">6th Gen</option>
+					<option value="7">7th Gen</option>
+					<option value="8">8th Gen</option>
+					<option value="9">9th Gen</option>
+				</select>
+			</div>
 
-	<span class='pokemon-details'>
-		<span id='detail-0' class='pokemon-detail unused'></span>
-		<span id='detail-1' class='pokemon-detail unused'></span>
-		<span id='detail-2' class='pokemon-detail unused'></span>
-		<span id='detail-3' class='pokemon-detail unused'></span>
-		<span id='detail-4' class='pokemon-detail unused'></span>
-		<span id='detail-5' class='pokemon-detail unused'></span>
-	</span>
+			<h2>Orders</h2>
+			<div class="orders">
+				<select id="order-update">
+					<option value="0">-- None --</option>
+				</select>
+			</div>
 
-	<input type='hidden' id='gen_getter' data-id='0'>
+			<h2>Options</h2>
+			<div class="options">
+				<span class="option">
+					<input type="checkbox" id="" name="" value="">
+					<label for="">Placeholder</label>
+				</span>
+				<span class="option">
+					<input type="checkbox" id="" name="" value="">
+					<label for="">Placeholder</label>
+				</span>
+			</div>
+		</section>
+	</div>
+
+	<input type="hidden" id="gen_getter" data-id="0">
 </body>
 </html>

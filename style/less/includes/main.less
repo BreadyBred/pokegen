@@ -1,177 +1,246 @@
 // out: false
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html {
+	background: #111622;
+	background-size: cover;
 	font-family: @primary-ff;
 	font-size: @paragraph-fs;
-	background: linear-gradient(180deg, rgba(240,250,255,1) 0%, rgba(212,241,249,1) 100%);
-    background-size: cover;
-	min-height: 100vh;
 }
 
-body {
-	display: flex !important;
-	flex-direction: column;
+.site-header {
 	align-items: center;
-	gap: @s-gap;
-	padding: @smd-gap 0;
-
-	.title {
-		height: @md-icon;
-	}
-
-	.pokemon-cases {
-		.rows {
-			display: flex;
-		}
-
-		.pokemon-case {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			width: @md-icon;
-			aspect-ratio: 1/1;
-			background-color: #fdfdfd;
-			border: solid 1px #0A285F;
-
-			.pokemon-sprites {
-				width: 100%;
-				aspect-ratio: 1/1;
-			}
-		}
-	}
-
-
-	.buttons {
-		width: 80%;
-		position: relative;
+	border-bottom: solid 1px @border-c;
+	display: flex;
+	justify-content: space-between;
+	padding: @l-gap @l-gap;
+	white-space: nowrap;
+	
+	.logo-container {
+		align-items: center;
+		color: @white-c;
 		display: flex;
+		gap: @xs-gap;
 		justify-content: center;
 
-		& > .reroll-button {
-			width: 75px;
-			align-self: center;
-			cursor: pointer;
+		.logo-image {
+			aspect-ratio: 1/1;
+			width: @s-w;
 		}
-
-		& > select {
-			position: absolute;
-			align-self: flex-end;
-			right: 0;
-			appearance: none;
-			background-color: #fdfdfd;
-			border: solid 1px #0A285F;
-			padding: @xs-gap @s-gap;
-			font-family: @title-ff;
-			text-align: center;
-			max-height: 100%;
+		
+		.site-title {
+			color: @white-c;
+			font-size: @subtitle-fs;
+			font-weight: bold;
 		}
 	}
+}
 
-	.pokemon-details {
+.container-wrapper {
+	display: flex;
+	container-type: inline-size;
+	gap: @l-gap;
+	padding: @l-gap;
+	
+	.left-container {
 		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		gap: @xs-gap;
+		flex-basis: 75%;
+		flex-direction: column;
+		gap: @l-gap;
 
-		.pokemon-detail {
-			opacity: 0;
-			display: flex;
-			flex-direction: column;
-			gap: @xs-gap;
-			padding: @s-gap;
-			transition: all 0.3s ease-in-out;
-			width: @big-img;
+		.pokemon-details {
+			padding: @md-gap;
 
-			&:hover {
-				transform: scale(1.05);
-				box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+			h1 {
+				color: @white-c;
+				font-size: @title-fs;
 			}
 
-			img {
-				&.type-sprites {
-					height: 15px;
-				}
-			}
-
-			.header {
+			.pokemon-detail {
+				border-bottom: solid 1px @border-c;
+				color: @white-c;
 				display: flex;
-				flex-direction: column;
-				gap: @xs-gap;
-
-				.pokedex-info {
-					text-align: center;
+				justify-content: space-between;
+				padding: @md-gap 0;
+				
+				.pokemon-infos {
+					display: flex;
+					flex-direction: column;
+					gap: @xs-gap;
+					width: 150px;
 
 					h2 {
-						font-family: @title-ff;
+						font-size: @subtitle-fs;
 					}
 				}
 
-				.pokemon-sprites {
-					align-self: center;
-				}
-			}
-
-			.infos {
-				display: flex;
-				flex-direction: column;
-				gap: @xs-gap;
-
-				.type {
-					display: flex;
-					justify-content: space-around;
-					gap: @xs-gap;
-				}
-
 				table {
-					tr {
-						td {
-							font-size: @small-fs;
+					display: flex;
+					gap: @xl-gap;
 
-							&:first-child {
-								width: 33%;
-							}
+					tbody {
+						display: flex;
+						flex-direction: column;
+						justify-content: space-evenly;
+						width: 100%;
 
-							&:last-child {
-								width: 67%;
-							}
-
-							.progress-container {
-								width: 100%;
-								display: block;
-								background-color: @grey-c;
-								border-radius: 5px;
-								overflow: hidden;
-								height: 10px;
-							}
+						tr {
+							display: flex;
+							flex-direction: column;
+							gap: @xs-gap;
 							
-							.progress-bar {
-								display: block;
-								height: 100%;
-								width: 0%;
-								text-align: center;
-								line-height: 30px;
-								transition: width 0.5s;
+							td {
+								display: flex;
+								font-size: @small-fs;
+	
+								&:last-child {
+									width: 250px;
+								}
+	
+								.progress-container {
+									background-color: @grey-c;
+									border-radius: 5px;
+									display: block;
+									height: 10px;
+									overflow: hidden;
+									width: 100%;
+								}
+								
+								.progress-bar {
+									display: block;
+									height: 100%;
+									line-height: 30px;
+									text-align: center;
+									transition: width 0.5s;
+									width: 0%;
+								}
 							}
 						}
 					}
 				}
-			}
 
-			img {
-				&.pokemon-sprites {
-					width: @l-icon;
-					aspect-ratio: 1/1;
+				.sprites {
+					display: flex;
+					flex-direction: column;
+					gap: @xs-gap;
+					width: 205px;
+				
+					.pokemon-sprite {
+						align-self: center;
+						height: @l-w;
+					}
+
+					.type {
+						display: flex;
+						justify-content: center;
+						gap: @xs-gap;
+
+						img{
+							height: @s-w;
+						}
+					}
 				}
 			}
+		}
+
+		.card {
+			background-color: #111722;
+			border: 1px solid #344465;
+			border-radius: @md-radius;
+			display: flex;
+			flex-direction: column;
+			gap: @md-gap;
+			justify-content: space-between;
+			padding: @md-gap;
+	
+			@container (min-width: 480px) {
+				align-items: center;
+				flex-direction: row;
+			}
+			
+			.card-content {
+				display: flex;
+				flex-direction: column;
+				gap: @xs-gap;
+				
+				.card-title {
+					color: white;
+					font-weight: bold;
+					line-height: 1.2;
+				}
+			
+				.card-description {
+					color: #93a5c8;
+					font-weight: normal;
+					line-height: normal;
+				}
+			}
+			
+			.button {
+				align-items: center;
+				background-color: #144bb8;
+				border: none;
+				border-radius: @md-radius;
+				color: white;
+				cursor: pointer;
+				display: flex;
+				font-size: @small-fs;
+				font-weight: 500;
+				height: 2rem;
+				justify-content: center;
+				line-height: normal;
+				min-width: 84px;
+				max-width: 480px;
+				overflow: hidden;
+				padding: 0 @md-gap;
+	
+				.button-text {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+
+	.options {
+		display: flex;
+		flex-direction: column;
+		gap: @l-gap;
+
+		h2 {
+			color: @white-c;
+		}
+
+		select {
+			align-self: flex-start;
+			appearance: none;
+			background-color: #243047;
+			border: solid 1px @border-c;
+			border-radius: @md-radius;
+			color: @white-c;
+			font-family: @title-ff;
+			padding: @xs-gap @s-gap;
+			text-align: center;
+		}
+
+		input[type=checkbox] {
+		}
+
+		label {
+			color: @white-c;
+		}
+
+		span {
+			display: flex;
+			gap: @s-gap;
 		}
 	}
 }
