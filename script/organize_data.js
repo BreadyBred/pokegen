@@ -177,8 +177,8 @@ function get_pokemon_infos(pokemon_id) {
 }
 
 function change_gen() {
-	const selected_element = document.getElementById("gen_setter");
-	const gen_getter = document.getElementById("gen_getter");
+	const selected_element = document.getElementById("gen-setter");
+	const gen_getter = document.getElementById("gen-getter");
 	gen_getter.setAttribute("data-id", selected_element.value);
 }
 

@@ -19,7 +19,7 @@ function get_pokemon_sprite(pokemon_id) {
 }
 
 function get_gen() {
-	return document.getElementById('gen_getter').getAttribute('data-id');
+	return document.getElementById('gen-getter').getAttribute('data-id');
 }
 
 function get_all_pokemons() {
