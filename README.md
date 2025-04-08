@@ -29,7 +29,7 @@ To use PokeGen:
 
 ## Screenshots
 
-![pokegen](https:![Capture](https://github.com/user-attachments/assets/338e62d3-5afe-4506-b19d-3a8d30b63702)
+![Capture](https://github.com/user-attachments/assets/f650043f-c0d0-4594-809b-e5a39a6601bc)
 
 ## Contributing
 
