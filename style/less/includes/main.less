@@ -75,6 +75,7 @@ html {
 					display: flex;
 					flex-direction: column;
 					gap: @xs-gap;
+					width: 150px;
 
 					h2 {
 						font-size: @subtitle-fs;
@@ -150,10 +151,9 @@ html {
 			}
 		}
 
-		.team-generator-card {
+		.card {
 			display: flex;
 			flex-direction: column;
-			items-align: flex-start;
 			justify-content: space-between;
 			gap: @md-gap;
 			border-radius: @md-radius;
@@ -184,7 +184,7 @@ html {
 				}
 			}
 			
-			.generate-button {
+			.button {
 				border: none;
 				display: flex;
 				min-width: 84px;
@@ -212,7 +212,7 @@ html {
 	}
 
 
-	.filters {
+	.options {
 		display: flex;
 		flex-direction: column;
 		gap: @l-gap;
@@ -231,6 +231,18 @@ html {
 			text-align: center;
 			color: @white-c;
 			border-radius: @md-radius;
+		}
+
+		input[type=checkbox] {
+		}
+
+		label {
+			color: @white-c;
+		}
+
+		span {
+			display: flex;
+			gap: @s-gap;
 		}
 	}
 }

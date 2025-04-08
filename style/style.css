@@ -98,6 +98,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 150px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos h2 {
   font-size: 20px;
@@ -158,10 +159,9 @@ html {
 .container-wrapper .left-container .pokemon-details .pokemon-detail .sprites .type img {
   height: 20px;
 }
-.container-wrapper .left-container .team-generator-card {
+.container-wrapper .left-container .card {
   display: flex;
   flex-direction: column;
-  items-align: flex-start;
   justify-content: space-between;
   gap: 20px;
   border-radius: 10px;
@@ -170,27 +170,27 @@ html {
   padding: 20px;
 }
 @container (min-width: 480px) {
-  .container-wrapper .left-container .team-generator-card {
+  .container-wrapper .left-container .card {
     flex-direction: row;
     align-items: center;
   }
 }
-.container-wrapper .left-container .team-generator-card .card-content {
+.container-wrapper .left-container .card .card-content {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.container-wrapper .left-container .team-generator-card .card-content .card-title {
+.container-wrapper .left-container .card .card-content .card-title {
   color: white;
   font-weight: bold;
   line-height: 1.2;
 }
-.container-wrapper .left-container .team-generator-card .card-content .card-description {
+.container-wrapper .left-container .card .card-content .card-description {
   color: #93a5c8;
   font-weight: normal;
   line-height: normal;
 }
-.container-wrapper .left-container .team-generator-card .generate-button {
+.container-wrapper .left-container .card .button {
   border: none;
   display: flex;
   min-width: 84px;
@@ -208,20 +208,20 @@ html {
   font-weight: 500;
   line-height: normal;
 }
-.container-wrapper .left-container .team-generator-card .generate-button .button-text {
+.container-wrapper .left-container .card .button .button-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.container-wrapper .filters {
+.container-wrapper .options {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-.container-wrapper .filters h2 {
+.container-wrapper .options h2 {
   color: #FFFFFF;
 }
-.container-wrapper .filters select {
+.container-wrapper .options select {
   align-self: flex-start;
   appearance: none;
   background-color: #243047;
@@ -231,4 +231,11 @@ html {
   text-align: center;
   color: #FFFFFF;
   border-radius: 10px;
+}
+.container-wrapper .options label {
+  color: #FFFFFF;
+}
+.container-wrapper .options span {
+  display: flex;
+  gap: 10px;
 }

@@ -1,6 +1,6 @@
 // function enable_single_roll() {
-// 	document.querySelectorAll('.pokemon-case').forEach((element) => {
-// 		element.addEventListener('click', roll_single_pokemon);
+// 	document.querySelectorAll(".pokemon-case").forEach((element) => {
+// 		element.addEventListener("click", roll_single_pokemon);
 // 	});
 // }
 
@@ -10,9 +10,9 @@ function generate_team(event) {
 	const pokemon_ids = get_random_team_ids();
 	// let i = 0;
 
-	// document.querySelectorAll('.pokemon-case').forEach((pokemon_case) => {
+	// document.querySelectorAll(".pokemon-case").forEach((pokemon_case) => {
 	// 	pokemon_case.innerHTML = `
-	// 		<img src='${get_pokemon_sprite(pokemon_ids[i])}' id='${i}' class='pokemon-sprites'>
+	// 		<img src="${get_pokemon_sprite(pokemon_ids[i])}" id="${i}" class="pokemon-sprites">
 	// 	`;
 
 	// 	display_pokemon_details(pokemon_ids[i], i);
@@ -29,23 +29,23 @@ function generate_team(event) {
 	}, 500);
 }
 
-// function roll_single_pokemon(event) {
-// 	const pokemon_id = get_random_id(get_gen());
-// 	const single_case = document.querySelector(`#case-${event.target.id}`);
+function roll_single_pokemon(event) {
+	const pokemon_id = get_random_id(get_gen());
+	const single_case = document.querySelector(`#case-${event.target.id}`);
 
-// 	single_case.innerHTML = `
-// 		<img src='${get_pokemon_sprite(pokemon_id)}' id='${event.target.id}' class='pokemon-sprites'>
-// 	`;
+	single_case.innerHTML = `
+		<img src="${get_pokemon_sprite(pokemon_id)}" id="${event.target.id}" class="pokemon-sprites">
+	`;
 
-// 	display_pokemon_details(pokemon_id, event.target.id);
-// }
+	display_pokemon_details(pokemon_id, event.target.id);
+}
 
 function display_pokemon_details(pokemon_id, case_id) {
 	function format_pokemon_name(name) {
         if (specific_pokemons.includes(name)) {
-            return name.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+            return name.replace(/-/g, " ").replace(/\b\w/g, char => char.toUpperCase());
         } else {
-            const index = name.indexOf('-');
+            const index = name.indexOf("-");
 
             if (index !== -1) {
                 return name.substring(0, index);
@@ -72,25 +72,25 @@ function display_pokemon_details(pokemon_id, case_id) {
 				.map((stat) => stat.name);
 	
 		return {
-			'lowest': lowest_stats,
-			'highest': highest_stats
+			"lowest": lowest_stats,
+			"highest": highest_stats
 		};
 	}
 
 	function format_stat_name(stat_name) {
 		switch(stat_name) {
-			case 'hp':
-				return 'HP';
-			case 'attack':
-				return 'Atk';
-			case 'defense':
-				return 'Def';
-			case 'special-attack':
-				return 'SpAtk';
-			case 'special-defense':
-				return 'SpDef';
-			case 'speed':
-				return 'SpD';
+			case "hp":
+				return "HP";
+			case "attack":
+				return "Atk";
+			case "defense":
+				return "Def";
+			case "special-attack":
+				return "SpAtk";
+			case "special-defense":
+				return "SpDef";
+			case "speed":
+				return "SpD";
 			default:
 				return stat_name;
 		}
@@ -103,11 +103,11 @@ function display_pokemon_details(pokemon_id, case_id) {
 		const pokemon_infos = get_pokemon_infos(pokemon_id);
 		pokemon_infos.name = pokemon_infos.name.toLowerCase();
 		const stat_check = stat_checker(pokemon_infos.stats);
-		const highest = stat_check['highest'];
-		const lowest = stat_check['lowest'];
+		const highest = stat_check["highest"];
+		const lowest = stat_check["lowest"];
 
 		const pokemon_details = `
-		<span class='pokemon-infos'>
+		<span class="pokemon-infos">
 			<h2>${capitalize_first_letter(format_pokemon_name(pokemon_infos.name))}</h2>
 			<p><strong>No.:</strong> ${pokemon_infos.id}</p>
 		</span>
@@ -123,50 +123,50 @@ function display_pokemon_details(pokemon_id, case_id) {
 					${chunk.map(stat => {
 					const real_stat_percent = stat.value * 100 / 180;
 
-					let class_name = '';
+					let class_name = "";
 					if (highest.includes(stat.name)) {
-						class_name = 'highest';
+						class_name = "highest";
 					} else if (lowest.includes(stat.name)) {
-						class_name = 'lowest';
+						class_name = "lowest";
 					}
 
-					let color = '';
+					let color = "";
 					if (stat.value <= 30) {
-						color = 'low';
+						color = "low";
 					} else if (stat.value <= 60) {
-						color = 'mid';
+						color = "mid";
 					} else if (stat.value <= 80) {
-						color = 'good';
+						color = "good";
 					} else {
-						color = 'better';
+						color = "better";
 					}
 
 					return `
 						<tr>
-						<td class='${class_name}'>${format_stat_name(stat.name)}:</td>
+						<td class="${class_name}">${format_stat_name(stat.name)}:</td>
 						<td>
-							<span class='progress-container'>
-							<span class='progress-bar ${color}' style='width:${real_stat_percent}%' id='progress-bar'></span>
+							<span class="progress-container">
+							<span class="progress-bar ${color}" style="width:${real_stat_percent}%" id="progress-bar"></span>
 							</span>
 						</td>
 						</tr>
 					`;
-					}).join('')}
+					}).join("")}
 				</tbody>
-				`).join('')
+				`).join("")
 			})()}
 		</table>
-		<span class='sprites'>
-			<img src='${get_pokemon_sprite(pokemon_infos.id)}' id='${pokemon_infos.id}' alt='${capitalize_first_letter(pokemon_infos.name)}' title='${capitalize_first_letter(pokemon_infos.name)}' class='pokemon-sprite'>
-			<span class='type'>
-				${pokemon_infos.types.map((type) => `<img src='medias/images/types/${type}.png' class='type-sprites' alt='${type}'>`).join('')}
+		<span class="sprites">
+			<img src="${get_pokemon_sprite(pokemon_infos.id)}" id="${pokemon_infos.id}" alt="${capitalize_first_letter(pokemon_infos.name)}" title="${capitalize_first_letter(pokemon_infos.name)}" class="pokemon-sprite">
+			<span class="type">
+				${pokemon_infos.types.map((type) => `<img src="medias/images/types/${type}.png" class="type-sprites" alt="${type}">`).join("")}
 			</span>
 		</span>
 	</span>`;
 	
-		if (pokemon_detail_element.classList.contains('unused')) {
-			pokemon_detail_element.classList.remove('unused');
-			pokemon_detail_element.classList.add('used');
+		if (pokemon_detail_element.classList.contains("unused")) {
+			pokemon_detail_element.classList.remove("unused");
+			pokemon_detail_element.classList.add("used");
 		}
 	
 		// all_types.forEach((type) => {
@@ -176,7 +176,7 @@ function display_pokemon_details(pokemon_id, case_id) {
 		// pokemon_detail_element.classList.add(pokemon_infos.types[0]);
 	
 		setTimeout(() => {
-			pokemon_detail_element.style.opacity = '1';
+			pokemon_detail_element.style.opacity = "1";
 		}, 300);
 	
 		pokemon_detail_element.innerHTML = pokemon_details;
@@ -198,9 +198,9 @@ function get_pokemon_infos(pokemon_id) {
 }
 
 function change_gen() {
-	const selected_element = document.getElementById('gen_setter');
-	const gen_getter = document.getElementById('gen_getter');
-	gen_getter.setAttribute('data-id', selected_element.value);
+	const selected_element = document.getElementById("gen_setter");
+	const gen_getter = document.getElementById("gen_getter");
+	gen_getter.setAttribute("data-id", selected_element.value);
 }
 
 function get_random_team_ids() {
@@ -224,6 +224,8 @@ function get_random_id(gen) {
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-	document.querySelector('.generate-button').addEventListener('click', generate_team);
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelector(".generate-button").addEventListener("click", generate_team);
+	document.querySelector("#gen-setter").addEventListener("change", change_gen);
+	// document.querySelector("#order-update").addEventListener("change", change_order);
 });
