@@ -97,10 +97,18 @@ html {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  justify-content: space-evenly;
   width: 150px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos h2 {
   font-size: 20px;
+}
+.container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos .reroll-button {
+  cursor: pointer;
+  width: fit-content;
+}
+.container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos .reroll-button img {
+  height: 20px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail table {
   display: flex;

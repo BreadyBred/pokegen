@@ -1,6 +1,6 @@
 function get_site_root(secured = true) {
     if (window.location.hostname === 'localhost') {
-        return 'http://localhost/travail/projets/pokeshuffle';
+        return 'http://localhost/travail/projets/pokegen';
     }
 
     if (!secured) {

@@ -74,10 +74,20 @@ html {
 					display: flex;
 					flex-direction: column;
 					gap: @xs-gap;
+					justify-content: space-evenly;
 					width: 150px;
 
 					h2 {
 						font-size: @subtitle-fs;
+					}
+
+					.reroll-button {
+						cursor: pointer;
+						width: fit-content;
+
+						img {
+							height: @s-w;
+						}
 					}
 				}
 
