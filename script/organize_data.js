@@ -81,7 +81,6 @@ function display_pokemon_details(pokemon_id, case_id) {
 		}
 	}
 
-	console.log(case_id);
 	const pokemon_detail_element = document.querySelector(`#detail-${case_id}`);
 	pokemon_detail_element.style.opacity = 0;
 

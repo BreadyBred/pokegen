@@ -4,10 +4,10 @@ function get_site_root(secured = true) {
     }
 
     if (!secured) {
-        return 'http://pokeshuffle.freesite.online';
+        return 'https://pokegen.42web.io/';
     }
 
-    return 'https://pokeshuffle.freesite.online';
+    return 'https://pokegen.42web.io/';
 }
 
 function get_medias_folder() {
