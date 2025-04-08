@@ -102,13 +102,7 @@ html {
   background-size: cover;
   min-height: 100vh;
 }
-body {
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-body .site-header {
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,49 +111,110 @@ body .site-header {
   padding: 25px 25px;
   width: 100%;
 }
-body .site-header .logo-container {
+.site-header .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
   color: #FFFFFF;
 }
-body .site-header .logo-container .logo-image {
+.site-header .logo-container .logo-image {
   width: 20px;
   aspect-ratio: 1/1;
 }
-body .site-header .logo-container .site-title {
+.site-header .logo-container .site-title {
   color: #FFFFFF;
   font-size: 18px;
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
-body .site-header .nav-container {
+.site-header .nav-container {
   display: flex;
   flex: 1;
   justify-content: flex-end;
 }
-body .site-header .nav-container .nav-links {
+.site-header .nav-container .nav-links {
   display: flex;
   align-items: center;
   gap: 35px;
 }
-body .site-header .nav-container .nav-links > a {
+.site-header .nav-container .nav-links > a {
   text-decoration: none;
 }
-body .site-header .nav-container .nav-links .roll-button {
+.site-header .nav-container .nav-links .roll-button {
   height: 20px;
   align-self: flex-end;
 }
-body .site-header .nav-container .nav-links .nav-item {
+.site-header .nav-container .nav-links .nav-item {
   display: flex;
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 500;
   line-height: normal;
 }
-body select {
+.container-wrapper {
+  padding: 1rem;
+  container-type: inline-size;
+}
+.container-wrapper .team-generator-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  items-align: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #344465;
+  background-color: #111722;
+  padding: 1.25rem;
+}
+@container (min-width: 480px) {
+  .container-wrapper .team-generator-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.container-wrapper .team-generator-card .card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.container-wrapper .team-generator-card .card-content .card-title {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.container-wrapper .team-generator-card .card-content .card-description {
+  color: #93a5c8;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: normal;
+}
+.container-wrapper .team-generator-card .generate-button {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: #144bb8;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: normal;
+}
+.container-wrapper .team-generator-card .generate-button .button-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+select {
   align-self: flex-end;
   appearance: none;
   background-color: #FFFFFF;
@@ -168,10 +223,10 @@ body select {
   font-family: 'Fractul SemiBold', 'Arial', sans-serif;
   text-align: center;
 }
-body .pokemon-cases .rows {
+.pokemon-cases .rows {
   display: flex;
 }
-body .pokemon-cases .pokemon-case {
+.pokemon-cases .pokemon-case {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,17 +235,17 @@ body .pokemon-cases .pokemon-case {
   background-color: #fdfdfd;
   border: solid 1px #0A285F;
 }
-body .pokemon-cases .pokemon-case .pokemon-sprites {
+.pokemon-cases .pokemon-case .pokemon-sprites {
   width: 100%;
   aspect-ratio: 1/1;
 }
-body .pokemon-details {
+.pokemon-details {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 5px;
 }
-body .pokemon-details .pokemon-detail {
+.pokemon-details .pokemon-detail {
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -199,47 +254,47 @@ body .pokemon-details .pokemon-detail {
   transition: all 0.3s ease-in-out;
   width: 200px;
 }
-body .pokemon-details .pokemon-detail:hover {
+.pokemon-details .pokemon-detail:hover {
   transform: scale(1.05);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
-body .pokemon-details .pokemon-detail img.type-sprites {
+.pokemon-details .pokemon-detail img.type-sprites {
   height: 15px;
 }
-body .pokemon-details .pokemon-detail .header {
+.pokemon-details .pokemon-detail .header {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-body .pokemon-details .pokemon-detail .header .pokedex-info {
+.pokemon-details .pokemon-detail .header .pokedex-info {
   text-align: center;
 }
-body .pokemon-details .pokemon-detail .header .pokedex-info h2 {
+.pokemon-details .pokemon-detail .header .pokedex-info h2 {
   font-family: 'Fractul SemiBold', 'Arial', sans-serif;
 }
-body .pokemon-details .pokemon-detail .header .pokemon-sprites {
+.pokemon-details .pokemon-detail .header .pokemon-sprites {
   align-self: center;
 }
-body .pokemon-details .pokemon-detail .infos {
+.pokemon-details .pokemon-detail .infos {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-body .pokemon-details .pokemon-detail .infos .type {
+.pokemon-details .pokemon-detail .infos .type {
   display: flex;
   justify-content: space-around;
   gap: 5px;
 }
-body .pokemon-details .pokemon-detail .infos table tr td {
+.pokemon-details .pokemon-detail .infos table tr td {
   font-size: 12px;
 }
-body .pokemon-details .pokemon-detail .infos table tr td:first-child {
+.pokemon-details .pokemon-detail .infos table tr td:first-child {
   width: 33%;
 }
-body .pokemon-details .pokemon-detail .infos table tr td:last-child {
+.pokemon-details .pokemon-detail .infos table tr td:last-child {
   width: 67%;
 }
-body .pokemon-details .pokemon-detail .infos table tr td .progress-container {
+.pokemon-details .pokemon-detail .infos table tr td .progress-container {
   width: 100%;
   display: block;
   background-color: #d0d0d0;
@@ -247,7 +302,7 @@ body .pokemon-details .pokemon-detail .infos table tr td .progress-container {
   overflow: hidden;
   height: 10px;
 }
-body .pokemon-details .pokemon-detail .infos table tr td .progress-bar {
+.pokemon-details .pokemon-detail .infos table tr td .progress-bar {
   display: block;
   height: 100%;
   width: 0%;
@@ -255,7 +310,7 @@ body .pokemon-details .pokemon-detail .infos table tr td .progress-bar {
   line-height: 30px;
   transition: width 0.5s;
 }
-body .pokemon-details .pokemon-detail img.pokemon-sprites {
+.pokemon-details .pokemon-detail img.pokemon-sprites {
   width: 125px;
   aspect-ratio: 1/1;
 }

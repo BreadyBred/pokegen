@@ -1,17 +1,16 @@
 function enable_single_roll() {
-	document.querySelectorAll('.pokemon-case').forEach(function(element) {
+	document.querySelectorAll('.pokemon-case').forEach((element) => {
 		element.addEventListener('click', roll_single_pokemon);
 	});
 }
 
-function roll_pokemon_choice() {
-	let i = 0;
+function generate_team(event) {
+	const button = event.currentTarget
+	button.disabled = true;
 	const pokemon_ids = get_random_team_ids();
-	const roll_button = document.querySelector('.roll-button');
-	console.log(roll_button);
-	roll_button.disabled = true;
+	let i = 0;
 
-	document.querySelectorAll('.pokemon-case').forEach(function(pokemon_case) {
+	document.querySelectorAll('.pokemon-case').forEach((pokemon_case) => {
 		pokemon_case.innerHTML = `
 			<img src='${get_pokemon_sprite(pokemon_ids[i])}' id='${i}' class='pokemon-sprites'>
 		`;
@@ -20,8 +19,8 @@ function roll_pokemon_choice() {
 		i++;
 	});
 
-	setTimeout(function() {
-		roll_button.disabled = false;
+	setTimeout(() => {
+		button.removeAttribute("disabled");
 		enable_single_roll();
 	}, 500);
 }
@@ -39,7 +38,7 @@ function roll_single_pokemon(event) {
 
 function display_pokemon_details(pokemon_id, case_id) {
 	function format_pokemon_name(name) {
-        if(specific_pokemons.includes(name)) {
+        if (specific_pokemons.includes(name)) {
             return name.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
         } else {
             const index = name.indexOf('-');
@@ -61,12 +60,12 @@ function display_pokemon_details(pokemon_id, case_id) {
 		const lowest_value = Math.min(...stats.map(stat => stat.value));
 
 		const highest_stats = stats
-			.filter(stat => stat.value === highest_value)
-				.map(stat => stat.name);
+			.filter((stat) => stat.value === highest_value)
+				.map((stat) => stat.name);
 
 		const lowest_stats = stats
-			.filter(stat => stat.value === lowest_value)
-				.map(stat => stat.name);
+			.filter((stat) => stat.value === lowest_value)
+				.map((stat) => stat.name);
 	
 		return {
 			'lowest': lowest_stats,
@@ -96,7 +95,7 @@ function display_pokemon_details(pokemon_id, case_id) {
 	const pokemon_detail_element = document.querySelector(`#detail-${case_id}`);
 	pokemon_detail_element.style.opacity = 0;
 
-	setTimeout(function() {
+	setTimeout(() => {
 		const pokemon_infos = get_pokemon_infos(pokemon_id);
 		pokemon_infos.name = pokemon_infos.name.toLowerCase();
 		const stat_check = stat_checker(pokemon_infos.stats);
@@ -113,10 +112,10 @@ function display_pokemon_details(pokemon_id, case_id) {
 			</span>
 			<span class='infos'>
 				<span class='type'>
-					${pokemon_infos.types.map(type => `<img src='medias/images/types/${type}.png' class='type-sprites' alt='${type}'>`).join('')}
+					${pokemon_infos.types.map((type) => `<img src='medias/images/types/${type}.png' class='type-sprites' alt='${type}'>`).join('')}
 				</span>
 				<table>
-					${pokemon_infos.stats.map(stat => {
+					${pokemon_infos.stats.map((stat) => {
 						const real_stat_percent = stat.value * 100 / 180;
 
 						let class_name = '';
@@ -152,18 +151,18 @@ function display_pokemon_details(pokemon_id, case_id) {
 			</span>
 		`;
 	
-		if(pokemon_detail_element.classList.contains('unused')) {
+		if (pokemon_detail_element.classList.contains('unused')) {
 			pokemon_detail_element.classList.remove('unused');
 			pokemon_detail_element.classList.add('used');
 		}
 	
-		all_types.forEach(function(type) {
+		all_types.forEach((type) => {
 			pokemon_detail_element.classList.remove(type);
 		});
 	
 		pokemon_detail_element.classList.add(pokemon_infos.types[0]);
 	
-		setTimeout(function() {
+		setTimeout(() => {
 			pokemon_detail_element.style.opacity = '1';
 		}, 300);
 	
@@ -211,3 +210,7 @@ function get_random_id(gen) {
 	
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelector('.generate-button').addEventListener('click', generate_team);
+});

@@ -16,15 +16,19 @@
 		  	<img class="logo-image" src="medias/images/content/logo.png" alt="Logo"/>
 		  	<h2 class="site-title">PokeGen</h2>
 		</span>
-		<span class="nav-container">
-			<span class="nav-links">
-				<a href="#" class="nav-item"><img class="roll-button" src="medias/images/content/roll_white.png" onclick="roll_pokemon_choice()"></a>
-				<a href="#" class="nav-item">Roll</a>
-				<a href="#" class="nav-item">Filters</a>
-			</span>
-		</span>
 	</header>
 
+	<div class="container-wrapper">
+		<div class="team-generator-card">
+			<div class="card-content">
+				<p class="card-title">Generate Team</p>
+				<p class="card-description">Generate a team based on the current filters</p>
+			</div>
+			<button class="generate-button">
+				<span class="button-text">Generate</span>
+			</button>
+		</div>
+	</div>
 	
 	<span class='filters'>
 		<select id='gen_setter' onchange='change_gen()'>
@@ -40,6 +44,7 @@
 			<option value='9'>9th Gen</option>
 		</select>
 	</span>
+
 	<span class='pokemon-cases'>
 		<span class='rows top-row'>
 			<span id='case-0' class='pokemon-case'>
