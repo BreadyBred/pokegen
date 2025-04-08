@@ -8,13 +8,13 @@
 	<script src='script/script.js'></script>
 	<script src='script/utility_functions.js'></script>
 	<script src='script/organize_data.js'></script>
-	<title>PokéTeam Shuffle</title>
+	<title>PokeGen</title>
 </head>
 <body>
 	<header class="site-header">
 		<div class="logo-container">
-		  	<img class="logo-image" src="medias/images/content/logo.png" alt="Logo"/>
-		  	<h2 class="site-title">PokeGen</h2>
+			<img class="logo-image" src="medias/images/content/logo.png" alt="Logo"/>
+			<h2 class="site-title">PokeGen</h2>
 		</div>
 	</header>
 
@@ -31,411 +31,97 @@
 			</section>
 	
 			<section class='pokemon-details'>
-				<span id='detail-0' class='pokemon-detail unused'></span>
-				<span id='detail-1' class='pokemon-detail unused'></span>
-				<span id='detail-2' class='pokemon-detail unused'></span>
-				<span id='detail-3' class='pokemon-detail unused'></span>
-				<span id='detail-4' class='pokemon-detail unused'></span>
-				<span id='detail-5' class='pokemon-detail unused'></span>
-			</section>
-			<section class="pokemon-details">
-				<span id="detail-0" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<h1>Current team</h1>
+				<span id='detail-0' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
-				<span id="detail-1" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<span id='detail-1' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
-				<span id="detail-2" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<span id='detail-2' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
-				<span id="detail-3" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<span id='detail-3' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
-				<span id="detail-4" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<span id='detail-4' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
-				<span id="detail-5" class="pokemon-detail used ghost" style="opacity: 1;">
-					<span class="header">
-						<span class="pokedex-info">
-							<h2>Drifloon</h2>
-							<p><strong>No.:</strong> 425</p>
-						</span>
-						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprites">
-					</span>
-					<span class="infos">
-						<span class="type">
-							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost"><img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
-						</span>
-						<table>
-							<tbody>
-								<tr>
-									<td class="highest">HP:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">Atk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="lowest">Def:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpAtk:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpDef:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="">SpD:</td>
-									<td>
-										<span class="progress-container">
-											<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
-										</span>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</span>
+				<span id='detail-5' class='pokemon-detail unused'>
+					<h2>Empty placeholder</h2>
 				</span>
 			</section>
+
+			<!-- <section class="pokemon-details">
+				<h1>Current team</h1>
+				<span id="detail-0" class="pokemon-detail used" style="opacity: 1;">
+					<span class="pokemon-infos">
+						<h2>Drifloon</h2>
+						<p><strong>No.:</strong> 425</p>
+					</span>
+					<table>
+						<tbody>
+							<tr>
+								<td class="highest">HP:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar better" style="width:50%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="">Atk:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar mid" style="width:27.77777777777778%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="lowest">Def:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar mid" style="width:18.88888888888889%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+								<td class="">SpAtk:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar mid" style="width:33.333333333333336%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="">SpDef:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar mid" style="width:24.444444444444443%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td class="">SpD:</td>
+								<td>
+									<span class="progress-container">
+										<span class="progress-bar good" style="width:38.888888888888886%" id="progress-bar"></span>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<span class="sprites">
+						<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png" id="425" alt="Drifloon" title="Drifloon" class="pokemon-sprite">
+						<span class="type">
+							<img src="medias/images/types/ghost.png" class="type-sprites" alt="ghost">
+							<img src="medias/images/types/flying.png" class="type-sprites" alt="flying">
+						</span>
+					</span>
+				</span>
+			</section> -->
 		</div>
 		
 		<section class='filters'>
@@ -454,31 +140,6 @@
 			</select>
 		</section>
 	</div>
-
-	<!-- <span class='pokemon-cases'>
-		<span class='rows top-row'>
-			<span id='case-0' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='0' class='pokemon-sprites'>
-			</span>
-			<span id='case-1' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='1' class='pokemon-sprites'>
-			</span>
-			<span id='case-2' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='2' class='pokemon-sprites'>
-			</span>
-		</span>
-		<span class='rows bottom-row'>
-			<span id='case-3' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='3' class='pokemon-sprites'>
-			</span>
-			<span id='case-4' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='4' class='pokemon-sprites'>
-			</span>
-			<span id='case-5' class='pokemon-case'>
-				<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png' id='5' class='pokemon-sprites'>
-			</span>
-		</span>
-	</span> -->
 
 	<input type='hidden' id='gen_getter' data-id='0'>
 </body>

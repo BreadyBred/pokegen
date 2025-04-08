@@ -6,10 +6,6 @@
   font-family: 'Fractul Regular';
   src: url('../medias/fonts/fractul_regular.ttf') format('truetype');
 }
-.used {
-  background-color: #fdfdfd;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
 .highest {
   color: #4ADE80;
 }
@@ -33,60 +29,6 @@ i {
 }
 ul {
   list-style: none;
-}
-.poison {
-  border: solid 2px #9040cc;
-}
-.psychic {
-  border: solid 2px #f14179;
-}
-.rock {
-  border: solid 2px #afa981;
-}
-.steel {
-  border: solid 2px #60a1b8;
-}
-.flying {
-  border: solid 2px #81b9ef;
-}
-.water {
-  border: solid 2px #2980ef;
-}
-.ghost {
-  border: solid 2px #704170;
-}
-.grass {
-  border: solid 2px #42a129;
-}
-.ground {
-  border: solid 2px #915121;
-}
-.ice {
-  border: solid 2px #3fd8ff;
-}
-.normal {
-  border: solid 2px #9fa19f;
-}
-.dragon {
-  border: solid 2px #5061e1;
-}
-.electric {
-  border: solid 2px #fac000;
-}
-.fairy {
-  border: solid 2px #f170f1;
-}
-.fighting {
-  border: solid 2px #ff8000;
-}
-.fire {
-  border: solid 2px #e62829;
-}
-.bug {
-  border: solid 2px #91a119;
-}
-.dark {
-  border: solid 2px #50413f;
 }
 * {
   margin: 0;
@@ -122,7 +64,7 @@ html {
 }
 .site-header .logo-container .site-title {
   color: #FFFFFF;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 .container-wrapper {
@@ -134,59 +76,55 @@ html {
 .container-wrapper .left-container {
   display: flex;
   flex-direction: column;
+  flex-basis: 75%;
+  gap: 25px;
 }
 .container-wrapper .left-container .pokemon-details {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 5px;
+  padding: 20px;
+}
+.container-wrapper .left-container .pokemon-details h1 {
+  color: #FFFFFF;
+  font-size: 24px;
 }
 .container-wrapper .left-container .pokemon-details .pokemon-detail {
-  opacity: 0;
+  color: #FFFFFF;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
-  transition: all 0.3s ease-in-out;
-  width: 200px;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: solid 1px #243047;
+  height: 200px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail img.type-sprites {
-  height: 15px;
-}
-.container-wrapper .left-container .pokemon-details .pokemon-detail .header {
+.container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokedex-info {
-  text-align: center;
+.container-wrapper .left-container .pokemon-details .pokemon-detail .pokemon-infos h2 {
+  font-size: 20px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokedex-info h2 {
-  font-family: 'Fractul SemiBold', 'Arial', sans-serif;
+.container-wrapper .left-container .pokemon-details .pokemon-detail table {
+  display: flex;
+  gap: 50px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .header .pokemon-sprites {
-  align-self: center;
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos {
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos .type {
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td {
+  font-size: 14px;
   display: flex;
-  justify-content: space-around;
-  gap: 5px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td {
-  font-size: 12px;
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td:last-child {
+  width: 250px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td:first-child {
-  width: 33%;
-}
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td:last-child {
-  width: 67%;
-}
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td .progress-container {
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td .progress-container {
   width: 100%;
   display: block;
   background-color: #d0d0d0;
@@ -194,7 +132,7 @@ html {
   overflow: hidden;
   height: 10px;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail .infos table tr td .progress-bar {
+.container-wrapper .left-container .pokemon-details .pokemon-detail table tbody tr td .progress-bar {
   display: block;
   height: 100%;
   width: 0%;
@@ -202,21 +140,34 @@ html {
   line-height: 30px;
   transition: width 0.5s;
 }
-.container-wrapper .left-container .pokemon-details .pokemon-detail img.pokemon-sprites {
-  width: 125px;
-  aspect-ratio: 1/1;
+.container-wrapper .left-container .pokemon-details .pokemon-detail .sprites {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 205px;
+}
+.container-wrapper .left-container .pokemon-details .pokemon-detail .sprites .pokemon-sprite {
+  align-self: center;
+  height: 125px;
+}
+.container-wrapper .left-container .pokemon-details .pokemon-detail .sprites .type {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.container-wrapper .left-container .pokemon-details .pokemon-detail .sprites .type img {
+  height: 20px;
 }
 .container-wrapper .left-container .team-generator-card {
   display: flex;
-  flex: 1;
   flex-direction: column;
   items-align: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 20px;
   border-radius: 10px;
   border: 1px solid #344465;
   background-color: #111722;
-  padding: 1.25rem;
+  padding: 20px;
 }
 @container (min-width: 480px) {
   .container-wrapper .left-container .team-generator-card {
@@ -227,17 +178,15 @@ html {
 .container-wrapper .left-container .team-generator-card .card-content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 5px;
 }
 .container-wrapper .left-container .team-generator-card .card-content .card-title {
   color: white;
-  font-size: 1rem;
   font-weight: bold;
   line-height: 1.2;
 }
 .container-wrapper .left-container .team-generator-card .card-content .card-description {
   color: #93a5c8;
-  font-size: 1rem;
   font-weight: normal;
   line-height: normal;
 }
@@ -252,10 +201,10 @@ html {
   overflow: hidden;
   border-radius: 10px;
   height: 2rem;
-  padding: 0 1rem;
+  padding: 0 20px;
   background-color: #144bb8;
   color: white;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
   line-height: normal;
 }
@@ -267,7 +216,6 @@ html {
 .container-wrapper .filters {
   display: flex;
   flex-direction: column;
-  width: 20%;
   gap: 25px;
 }
 .container-wrapper .filters h2 {

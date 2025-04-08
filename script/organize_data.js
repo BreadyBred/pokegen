@@ -107,64 +107,73 @@ function display_pokemon_details(pokemon_id, case_id) {
 		const lowest = stat_check['lowest'];
 
 		const pokemon_details = `
-			<span class='header'>
-				<span class='pokedex-info'>
-					<h2>${capitalize_first_letter(format_pokemon_name(pokemon_infos.name))}</h2>
-					<p><strong>No.:</strong> ${pokemon_infos.id}</p>
-				</span>
-				<img src='${get_pokemon_sprite(pokemon_infos.id)}' id='${pokemon_infos.id}' alt='${capitalize_first_letter(pokemon_infos.name)}' title='${capitalize_first_letter(pokemon_infos.name)}' class='pokemon-sprites'>
-			</span>
-			<span class='infos'>
-				<span class='type'>
-					${pokemon_infos.types.map((type) => `<img src='medias/images/types/${type}.png' class='type-sprites' alt='${type}'>`).join('')}
-				</span>
-				<table>
-					${pokemon_infos.stats.map((stat) => {
-						const real_stat_percent = stat.value * 100 / 180;
+		<span class='pokemon-infos'>
+			<h2>${capitalize_first_letter(format_pokemon_name(pokemon_infos.name))}</h2>
+			<p><strong>No.:</strong> ${pokemon_infos.id}</p>
+		</span>
+		<table>
+			${(() => {
+				const chunks = [];
+				for (let i = 0; i < pokemon_infos.stats.length; i += 3) {
+				chunks.push(pokemon_infos.stats.slice(i, i + 3));
+				}
+				
+				return chunks.map(chunk => `
+				<tbody>
+					${chunk.map(stat => {
+					const real_stat_percent = stat.value * 100 / 180;
 
-						let class_name = '';
-						if (highest.includes(stat.name)) {
-							class_name = 'highest';
-						} else if (lowest.includes(stat.name)) {
-							class_name = 'lowest';
-						}
+					let class_name = '';
+					if (highest.includes(stat.name)) {
+						class_name = 'highest';
+					} else if (lowest.includes(stat.name)) {
+						class_name = 'lowest';
+					}
 
-						let color = '';
-						if (stat.value <= 30) {
-							color = 'low';
-						} else if (stat.value <= 60) {
-							color = 'mid';
-						} else if (stat.value <= 80) {
-							color = 'good';
-						} else {
-							color = 'better';
-						}
+					let color = '';
+					if (stat.value <= 30) {
+						color = 'low';
+					} else if (stat.value <= 60) {
+						color = 'mid';
+					} else if (stat.value <= 80) {
+						color = 'good';
+					} else {
+						color = 'better';
+					}
 
-						return `
-							<tr>
-								<td class='${class_name}'>${format_stat_name(stat.name)}:</td>
-								<td>
-									<span class='progress-container'>
-										<span class='progress-bar ${color}' style='width:${real_stat_percent}%' id='progress-bar'></span>
-									</span>
-								</td>
-							</tr>
-						`;
+					return `
+						<tr>
+						<td class='${class_name}'>${format_stat_name(stat.name)}:</td>
+						<td>
+							<span class='progress-container'>
+							<span class='progress-bar ${color}' style='width:${real_stat_percent}%' id='progress-bar'></span>
+							</span>
+						</td>
+						</tr>
+					`;
 					}).join('')}
-				</table>
+				</tbody>
+				`).join('')
+			})()}
+		</table>
+		<span class='sprites'>
+			<img src='${get_pokemon_sprite(pokemon_infos.id)}' id='${pokemon_infos.id}' alt='${capitalize_first_letter(pokemon_infos.name)}' title='${capitalize_first_letter(pokemon_infos.name)}' class='pokemon-sprite'>
+			<span class='type'>
+				${pokemon_infos.types.map((type) => `<img src='medias/images/types/${type}.png' class='type-sprites' alt='${type}'>`).join('')}
 			</span>
-		`;
+		</span>
+	</span>`;
 	
 		if (pokemon_detail_element.classList.contains('unused')) {
 			pokemon_detail_element.classList.remove('unused');
 			pokemon_detail_element.classList.add('used');
 		}
 	
-		all_types.forEach((type) => {
-			pokemon_detail_element.classList.remove(type);
-		});
+		// all_types.forEach((type) => {
+		// 	pokemon_detail_element.classList.remove(type);
+		// });
 	
-		pokemon_detail_element.classList.add(pokemon_infos.types[0]);
+		// pokemon_detail_element.classList.add(pokemon_infos.types[0]);
 	
 		setTimeout(() => {
 			pokemon_detail_element.style.opacity = '1';
